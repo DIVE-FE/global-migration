@@ -1,0 +1,50 @@
+
+@each $color, $value in $colors {
+  .fc-#{$color}{
+    color: #{$value} $imt;
+  }
+  .bg-#{$color}{
+    background-color: #{$value} $imt;
+  }
+}
+
+/* background-color */
+.bg-n{background: none $imt;}
+.bg-transparent{background-color: transparent;}
+
+
+/* icon color */
+.i-color-8c9fc0{filter: brightness(0) saturate(100%) invert(70%) sepia(60%) saturate(158%) hue-rotate(179deg) brightness(79%) contrast(90%);}
+.i-color-ffffff{filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);}
+.i-color-bbbbbb{filter: invert(79%) sepia(11%) saturate(19%) hue-rotate(315deg) brightness(90%) contrast(104%);}
+.i-color-767676{filter: invert(43%) sepia(61%) saturate(0%) hue-rotate(118deg) brightness(98%) contrast(92%);}
+.i-color-505050{filter: invert(31%) sepia(0%) saturate(1%) hue-rotate(121deg) brightness(94%) contrast(88%);}
+.i-color-111111{filter: invert(2%) sepia(48%) saturate(10%) hue-rotate(322deg) brightness(93%) contrast(91%);}
+.i-color-c7b392{filter: invert(79%) sepia(7%) saturate(1013%) hue-rotate(359deg) brightness(90%) contrast(96%);}
+.i-color-caac84{filter: invert(67%) sepia(61%) saturate(181%) hue-rotate(355deg) brightness(92%) contrast(95%);}
+.i-color-fefcf2{filter: invert(95%) sepia(5%) saturate(997%) hue-rotate(343deg) brightness(110%) contrast(105%);}
+.i-color-f6f3e7{filter: invert(92%) sepia(5%) saturate(781%) hue-rotate(333deg) brightness(108%) contrast(93%);}
+.i-color-e2dbc7{filter: invert(95%) sepia(13%) saturate(306%) hue-rotate(354deg) brightness(91%) contrast(94%);}
+.i-color-cfc4a3{filter: invert(88%) sepia(8%) saturate(757%) hue-rotate(7deg) brightness(88%) contrast(94%);}
+.i-color-c6b993{filter: invert(84%) sepia(24%) saturate(361%) hue-rotate(7deg) brightness(88%) contrast(81%);}
+.i-color-beae82{filter: invert(72%) sepia(8%) saturate(1150%) hue-rotate(6deg) brightness(97%) contrast(88%);}
+.i-color-b5a371{filter: invert(68%) sepia(11%) saturate(1066%) hue-rotate(6deg) brightness(95%) contrast(87%);}
+.i-color-ac9860{filter: invert(58%) sepia(52%) saturate(296%) hue-rotate(7deg) brightness(94%) contrast(90%);}
+.i-color-a08c53{filter: invert(50%) sepia(49%) saturate(357%) hue-rotate(7deg) brightness(100%) contrast(88%);}
+.i-color-8f7d4B{filter: invert(55%) sepia(3%) saturate(4441%) hue-rotate(6deg) brightness(88%) contrast(93%);}
+.i-color-6e5d2c{filter: invert(29%) sepia(78%) saturate(312%) hue-rotate(7deg) brightness(103%) contrast(90%);}
+.i-color-fafafa{filter: invert(100%) sepia(0%) saturate(7422%) hue-rotate(185deg) brightness(106%) contrast(96%);}
+.i-color-f1f1f5{filter: invert(100%) sepia(8%) saturate(1309%) hue-rotate(180deg) brightness(93%) contrast(107%);}
+.i-color-f5f2ee{filter: invert(96%) sepia(58%) saturate(334%) hue-rotate(38deg) brightness(122%) contrast(91%);}
+.i-color-eee8d7{filter: invert(99%) sepia(40%) saturate(371%) hue-rotate(320deg) brightness(95%) contrast(96%);}
+.i-color-dae7f7{filter: invert(89%) sepia(7%) saturate(714%) hue-rotate(184deg) brightness(103%) contrast(94%);}
+.i-color-f0f0f6{filter: invert(86%) sepia(14%) saturate(50%) hue-rotate(191deg) brightness(110%) contrast(94%);}
+.i-color-e6e6ec{filter: invert(99%) sepia(84%) saturate(1101%) hue-rotate(180deg) brightness(109%) contrast(84%);}
+.i-color-8f7d4b{filter: invert(48%) sepia(5%) saturate(3773%) hue-rotate(7deg) brightness(100%) contrast(80%);}
+.i-color-dc0000{filter: invert(11%) sepia(74%) saturate(7314%) hue-rotate(3deg) brightness(87%) contrast(113%);}
+.i-color-04b014{filter: invert(36%) sepia(96%) saturate(1171%) hue-rotate(98deg) brightness(101%) contrast(97%);}
+.i-color-ffaa00{filter: invert(78%) sepia(54%) saturate(4854%) hue-rotate(1deg) brightness(107%) contrast(104%);}
+.i-color-b0b0b0{filter: brightness(0) saturate(100%) invert(63%) sepia(0%) saturate(1131%) hue-rotate(163deg) brightness(109%) contrast(98%);}
+.i-color-347eff{filter: invert(41%) sepia(86%) saturate(3182%) hue-rotate(208deg) brightness(105%) contrast(101%);}
+.i-color-1e61d6{filter: brightness(0) saturate(100%) invert(27%) sepia(31%) saturate(5698%) hue-rotate(209deg) brightness(95%) contrast(83%);}
+.i-color-282828{filter: brightness(0) saturate(100%) invert(17%) sepia(0%) saturate(0%) hue-rotate(183deg) brightness(85%) contrast(97%) !important;}

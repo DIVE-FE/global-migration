@@ -1,0 +1,758 @@
+/********************************************************/
+/* text , select , */
+/********************************************************/
+
+input::placeholder,
+textarea::placeholder {
+  color: $color-767676;
+}
+input[disabled],
+input[readonly] {
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*
+  타입 별 css 분리
+  type: text, password, search, time, actionbtn, fileupload
+  텍스트, 비밀번호, 검색, 인증, 파일업로드, 버튼
+ *******************************************************************************************/
+.form-group {
+  position: relative;
+  label {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    span {
+      color: $color-0079ff;
+    }
+  }
+  &.input-type-text {
+    .input-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_delete_gray.svg);
+    }
+  }
+  &.input-type-password {
+    .input-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_show.svg);
+    }
+  }
+  &.input-type-search {
+    .form-control {
+      padding-left: 40px !important;
+    }
+    .input-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_delete_gray.svg);
+    }
+    .input-group__add {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_search.svg);
+    }
+  }
+  &.input-type-time {
+    .input-group__append.time {
+      top: 0;
+      width: 33px;
+      color: $color-71a5ff;
+      font-size: 1.4rem;
+    }
+  }
+  &.input-type-number {
+    .input-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_delete_gray.svg);
+    }
+    .form-control {
+      padding-left: 40px !important;
+    }
+    .other-input {
+      position: absolute;
+      left: 30px;
+      height: 100%;
+      width: 50px;
+      z-index: 3;
+      &:after {
+        position: absolute;
+        right: -20px;
+        content: "|";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.61rem;
+        color: $color-242424 !important;
+        width: 10px;
+        height: calc(100% + 1px);
+        top: 0px;
+      }
+      input {
+        height: 100%;
+        padding-left: 10px;
+        color: $color-242424;
+      }
+    }
+    .input-group__add {
+      z-index: 4;
+      width: 50px;
+      &:before {
+        content: "+ ";
+        display: block;
+        color: $color-727272;
+      }
+      &.other {
+        &:before {
+          content: "+ ";
+          color: $color-242424;
+        }
+        & + .form-control {
+          padding-left: 130px !important;
+        }
+      }
+      &.thailand {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 66";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+      &.indonesia {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 62";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+      &.malaysia {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 60";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+      &.philippines {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 63";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+      &.taiwan {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 886";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+      &.singapore {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 65";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+      &.vietnam {
+        &:before {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          content: "+ 84";
+          color: $color-242424;
+          height: calc(100% + 1px);
+          top: 0;
+        }
+        &:after {
+          position: absolute;
+          right: -24px;
+          content: "|";
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.61rem;
+          color: $color-242424 !important;
+          width: 10px;
+          height: calc(100% + 1px);
+          top: 0px;
+        }
+        & + .form-control {
+          padding-left: 110px !important;
+        }
+      }
+    }
+  }
+
+  &.input-type-actionbtn {
+    .form-control {
+      padding-right: 120px !important;
+    }
+    .input-group__append {
+      width: auto;
+      height: 100%;
+      top: 0;
+      right: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      button {
+        width: 92px;
+        height: 100%;
+        text-align: center;
+        border-radius: 8px;
+        background-color: $color-71a5ff;
+        color: $color-ffffff;
+        font-size: 1.4rem;
+        &:hover {
+          background-color: $color-1e61d6;
+        }
+      }
+    }
+  }
+  &.input-type-fileupload {
+    .form-control {
+      padding-right: 210px;
+    }
+    .input-group__append {
+      width: auto;
+      height: 100%;
+      top: 0;
+      right: 8px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      button {
+        display: inline-block;
+        width: 92px;
+        height: 100%;
+        text-align: center;
+        border-radius: 8px;
+        background-color: $color-71a5ff;
+        color: $color-ffffff;
+        font-size: 1.4rem;
+        &:hover {
+          background-color: $color-1e61d6;
+        }
+        & + button {
+          margin-left: 4px;
+          background-color: $color-f6f6f6;
+          color: $color-767676;
+          border: 1px solid $color-cccccc;
+          &:hover {
+            background-color: $color-e8e8e8;
+            border-color: $color-767676;
+          }
+        }
+      }
+    }
+  }
+  &.input-type-selectTime {
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -8px !important;
+      .radio-box {
+        position: relative;
+        width: 25%;
+        margin-top: 8px;
+        & + .radio-box {
+          padding-left: 8px;
+        }
+        & + .radio-box:nth-child(5n + 0) {
+          padding-left: 0;
+        }
+        label {
+          text-align: center;
+          display: block;
+          border-radius: 8px;
+          border: 1px solid $color-cccccc;
+          padding: 8px 22px;
+          color: $color-767676;
+        }
+        input {
+          position: absolute;
+          &:checked + label {
+            background-color: $color-347eff;
+            color: $color-ffffff;
+          }
+          &:disabled + label {
+            background-color: $color-cccccc !important;
+            color: $color-ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  &.input-type-textArea {
+    &.success {
+      .textarea-group {
+        border-color: #28a745;
+      }
+    }
+    .textarea-group {
+      overflow: hidden;
+    }
+    textarea {
+      border: none;
+      width: 100%;
+      resize: none;
+      height: 100%;
+      color: $color-767676;
+      padding: 16px;
+      &:disabled,
+      &:read-only {
+        background-color: $color-f6f6f6;
+        color: $color-767676 !important;
+      }
+    }
+  }
+  &.select-type-default {
+    .select-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_arrow_line_down.svg);
+    }
+  }
+  &.select-type-search {
+    .select-group__add {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_search.svg);
+    }
+    .select-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_delete_gray.svg);
+    }
+    .form-control {
+      padding-left: 40px;
+    }
+  }
+  &.select-type-checkbox {
+    .select-group__append {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_arrow_line_down.svg);
+    }
+    .select-group-dropwon {
+      flex-direction: column;
+    }
+  }
+  &.calendar-type-default {
+    .calendar-group__add {
+      background-image: url(https://image.smartscore.kr/club/icn/ic_calendar.svg);
+    }
+    .form-control {
+      padding-left: 40px;
+      padding-right: 8px;
+    }
+  }
+  &.row {
+    display: flex;
+    align-items: center;
+    .title {
+      margin-bottom: 0;
+      color: $color-767676;
+      margin-right: 8px;
+    }
+    & + .form-group {
+      margin-top: 0;
+    }
+    .contactus-box {
+    }
+  }
+  &.row-input-select {
+    display: flex;
+    .input-group {
+      & + .select-group {
+        margin-left: 16px;
+      }
+    }
+    .select-group {
+      & + .select-group {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  // input title
+  .title {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $color-282828;
+    margin-bottom: 12px;
+    .etc-p {
+    }
+    & + .radio-group {
+      margin-top: -4px;
+    }
+  }
+  // input message
+  .message {
+    font-size: 1.4rem;
+    color: $color-767676;
+    margin-top: 4px;
+    position: absolute;
+    bottom: -26px;
+    left:0;
+  }
+  // input error
+  &.error {
+    // 에러
+    .message {
+      color: #dc3545;
+    }
+    .input-group {
+      .form-control {
+        border-color: #dc3545;
+      }
+    }
+    .select-group {
+      .form-control {
+        border-color: #dc3545;
+      }
+    }
+  }
+  // input success
+  &.success {
+    // 성공
+    .message {
+      color: #28a745;
+    }
+    .input-group {
+      .form-control {
+        border-color: #28a745;
+      }
+    }
+  }
+  // input warning
+  &.warning {
+    // 주의!
+    .message {
+      color: #ffc107;
+    }
+    .input-group {
+      .form-control {
+        border-color: #ffc107;
+      }
+    }
+  }
+  // input focus
+  &.focus {
+    .input-group {
+      .form-control {
+        border-color: $color-347eff;
+      }
+    }
+  }
+
+  & + .form-group {
+    margin-top: 30px;
+  }
+  & + .select-group {
+    margin-top: 30px;
+  }
+  //input
+  .input-group {
+    position: relative;
+    // input
+    .form-control {
+      //input
+      width: 100%;
+      height: 100%;
+      padding: 12px 48px 12px 8px;
+      font-size: 1.6rem;
+      color: $color-767676;
+      border: 1px solid $color-cccccc;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      background-color: $color-ffffff;
+      &:focus {
+        border-color: $color-347eff;
+      }
+      &:disabled,
+      &:read-only {
+        background-color: $color-f6f6f6;
+        color: $color-767676 !important;
+      }
+    }
+    // x, 타임 공간
+    &__append {
+      position: absolute;
+      top: 0;
+      right: 12px;
+      width: 24px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      &.time {
+        top: 13px;
+        width: 33px;
+        color: $color-71a5ff;
+        font-size: 1.4rem;
+      }
+    }
+    // 검색 공간
+    &__add {
+      position: absolute;
+      top: 0;
+      left: 8px;
+      width: 24px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      &.time {
+        top: 0;
+        width: 33px;
+        height: 100%;
+        color: $color-71a5ff;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+/*******************************************************************************************/
+
+/*
+  Textarea
+  타입 default 1개
+*******************************************************/
+.textarea-group {
+  border-radius: 8px;
+  border: 1px solid $color-cccccc;
+
+  &.success {
+    .textarea-group {
+      textarea {
+        border-color: #28a745;
+      }
+    }
+  }
+  textarea {
+  }
+
+  /* 리스트 형태*/
+  &.textarea-type-list {
+    & + h5 {
+      margin-top: 40px;
+    }
+    li {
+      & > div {
+        display: flex;
+        align-items: center;
+        span {
+          display: flex;
+          width: 80px;
+          height: 48px;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+        p {
+          padding-left: 20px;
+          b {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+/******************************************************/
+
+.tooltip-group {
+  display: inline-flex;
+  position: relative;
+  border-radius: 50%;
+  top: 1px;
+  cursor: pointer;
+  &:hover {
+    .tooltip-contentbox {
+      display: block;
+    }
+  }
+  .tooltip-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url(https://image.smartscore.kr/club/icn/ic_tooltip.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
+  .tooltip-contentbox {
+    &.show {
+      display: block;
+    }
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 85%;
+    padding: 16px;
+    background-color: $color-282828;
+    white-space: nowrap;
+    border-radius: 8px 8px 8px 0;
+    box-shadow: 0 8px 8px 0 rgba(30, 97, 214, 0.08);
+    &::before {
+      content: "";
+      left: 0;
+      bottom: -7px;
+      display: block;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-image: url(https://image.smartscore.kr/club/icn/ic_tooptip_tail.svg);
+      background-repeat: no-repeat;
+      filter: brightness(0) saturate(100%) invert(10%) sepia(53%) saturate(0%) hue-rotate(208deg)
+        brightness(101%) contrast(90%);
+    }
+    .tooltip-list {
+      &.circle {
+        li {
+          span {
+            position: relative;
+            top: -4px;
+            width: 4px;
+            height: 4px;
+            display: inline-block;
+            margin-right: 4px;
+            border-radius: 50%;
+            background: $color-e8e8e8;
+          }
+        }
+      }
+      li {
+        position: relative;
+        font-size: 1.6rem;
+        color: $color-e8e8e8;
+        font-weight: normal;
+        padding: 2px 0;
+      }
+    }
+  }
+}

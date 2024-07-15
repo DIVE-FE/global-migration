@@ -1,0 +1,126 @@
+.ic-plus {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_plus.svg);
+}
+.ic-close {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_close.svg);
+}
+.ic-edit {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_edit.svg);
+  background-size: 20px !important;
+}
+.ic-exchange {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_exchange.svg);
+}
+.ic-arrow-line-right {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_arrow_line_right.svg);
+}
+.ic-download {
+  background-image: url(https://image.smartscore.kr/smartscore_gloabl/icon/icon_download_2.svg);
+}
+.ic-trash {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_trash.svg);
+}
+.ic-reset {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_reset.svg);
+  background-size: 20px !important;
+}
+.ic-check {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_check.svg);
+  background-size: 20px !important;
+}
+.ic-group {
+  background-image: url(https://image.smartscore.kr/club/icn/ic_group.svg);
+  background-size: 20px !important;
+}
+.ic-zz {
+  background-image: url(https://image.smartscore.kr/smartscore_gloabl/icon/icon_zz.svg);
+  background-size: 20px !important;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+
+
+
+.button-common {
+  & + .button-common {
+    margin-left: 12px;
+  }
+  [class*="ic-"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    text-indent: -9999px;
+    margin-right: 4px;
+    filter: invert(43%) sepia(61%) saturate(0%) hue-rotate(118deg) brightness(98%) contrast(92%);
+  }
+  &.primary {
+    .ic-zz{
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    }
+    &:hover {
+      background-color: $color-1e61d6;
+    }
+    background-color: $color-0079ff;
+    color: $color-ffffff;
+  }
+  &.secondary {
+    background-color: $color-242424;
+    color: $color-ffffff;
+    &:hover {
+      background-color: $color-000000;
+    }
+  }
+  &.black {
+    background-color: $color-000000;
+    color: $color-ffffff;
+    &:hover {
+      background-color: $color-242424;
+    }
+  }
+  &.white {
+    background-color: $color-ffffff;
+    color: $color-242424;
+    &:hover {
+      background-color: $color-e8e8e8;
+    }
+  }
+  &.gray {
+    background-color: $color-f8f8f8;
+    color: $color-242424;
+    &:hover {
+      background-color: $color-e8e8e8;
+    }
+  }
+  &:disabled {
+    &:hover {
+      background-color: $color-cccccc;
+    }
+    background-color: $color-cccccc;
+    color: $color-ffffff;
+    cursor: default;
+  }
+  &.lg {
+    font-size: 2.4rem;
+  }
+  &.md {
+    font-size: 1.8rem;
+  }
+  &.xs {
+    font-size: 1.4rem;
+  }
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  letter-spacing: -0.42px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $color-242424;
+}

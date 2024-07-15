@@ -1,0 +1,113 @@
+.footer {
+  position: relative;
+  background: $color-242424;
+  padding: 60px 24px;
+
+  &.product{padding-bottom: 120px;}
+  &.digital{padding-bottom: 120px;}
+  &.home{padding-bottom: 120px;}
+
+  .footer-lang-select-group {
+    .select-group {
+      .form-control {
+        background: transparent;
+        border: 1px solid $color-cccccc;
+        color: $color-cccccc;
+      }
+      .select-group__append {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+          contrast(103%);
+      }
+    }
+  }
+  .footer-logo {
+    margin-bottom: 40px;
+  }
+  .footer-company {
+    display: flex;
+    margin-bottom: 40px;
+    li {
+      color: $color-f8f8f8;
+      font-weight: normal;
+      a {
+        color: $color-ffffff;
+      }
+      & + li {
+        margin-left: 20px;
+      }
+
+      span {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .footer-info {
+    margin-bottom: 40px;
+    p {
+      font-size: 1.2rem;
+      color: $color-727272;
+      & + p {
+        margin-top: 10px;
+      }
+    }
+  }
+  .footer-subsidiary {
+    h1 {
+      color: $color-f8f8f8;
+    }
+    p {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color-ffffff;
+    }
+    ul {
+      display: flex;
+      margin-top: 14px;
+      li {
+        color: $color-cccccc;
+        font-size: 1.2rem;
+        & + li {
+          margin-left: 20px;
+        }
+
+        a {
+          color: $color-ffffff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding-top: 90px;
+    padding-bottom: 130px;
+    .footer-logo {
+      display: block !important;
+      margin-right: 100px;
+    }
+    .footer-wrap {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .footer-info {
+      p {
+        color: $color-cccccc;
+        font-size: 1.4rem;
+      }
+    }
+    .footer-subsidiary {
+      p {
+        display: none;
+      }
+      ul {
+        li {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

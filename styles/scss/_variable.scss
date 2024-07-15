@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+/*
+* Last Modified: 2023-08-16
+* Author: mwkang1 (mwkang1@smartscore.kr)
+* Description: font-size CSS
+* html font-size => 62.5%
+**/
+
+$font-size-base: 1.6rem !default;
+
+// 글자 두께
+$font-weight-base: 400 !default;
+$font-weight-300: 300 !default;
+$font-weight-400: 400 !default;
+$font-weight-600: 500 !default;
+$font-weight-600: 600 !default;
+$font-weight-700: 700 !default;
+
+// h1 ~ h6 태그
+$h1-font-size: $font-size-base + 1.2rem !default; // 28
+$h2-font-size: $font-size-base + 0.8rem !default; // 24
+$h3-font-size: $font-size-base + 0.4rem !default; // 20
+$h4-font-size: $font-size-base !default; // 16
+
+// subtitle1 ~ 6
+/* subtitle은 <strong> 태그를 사용합니다. */
+$subtitle1-font-size: $font-size-base + 0.2rem !default; // 18
+$subtitle2-font-size: $font-size-base !default; // 16
+$subtitle3-font-size: $font-size-base - 0.2rem !default; // 14
+$subtitle4-font-size: $font-size-base - 0.4rem !default; // 12
+
+$h-font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+) !default;
+
+$subtitle-font-sizes: (
+  1: $subtitle1-font-size,
+  2: $subtitle2-font-size,
+  3: $subtitle3-font-size,
+  4: $subtitle4-font-size,
+) !default;
+
+#pc {
+  .h1 {
+    font-size: map-get($h-font-sizes, 1) + 4.4rem;
+  }
+  .h2 {
+    font-size: map-get($h-font-sizes, 2) + 3.6rem;
+  }
+  .h3 {
+    font-size: map-get($h-font-sizes, 3) + 3rem;
+  }
+  .h4 {
+    font-size: map-get($h-font-sizes, 4) + 2.6rem;
+  }
+
+  .subtitle1 {
+    font-size: map-get($subtitle-font-sizes, 1) + 1.4rem;
+  }
+  .subtitle2 {
+    font-size: map-get($subtitle-font-sizes, 2) + 0.8rem;
+  }
+  .subtitle3 {
+    font-size: map-get($subtitle-font-sizes, 3) + 0.4rem;
+  }
+  .subtitle4 {
+    font-size: map-get($subtitle-font-sizes, 4);
+  }
+}
+
+#mobile {
+  .h1 {
+    font-size: map-get($h-font-sizes, 1);
+  }
+  .h2 {
+    font-size: map-get($h-font-sizes, 2);
+  }
+  .h3 {
+    font-size: map-get($h-font-sizes, 3);
+  }
+  .h4 {
+    font-size: map-get($h-font-sizes, 4);
+  }
+
+  .subtitle1 {
+    font-size: map-get($subtitle-font-sizes, 1);
+  }
+  .subtitle2 {
+    font-size: map-get($subtitle-font-sizes, 2);
+  }
+  .subtitle3 {
+    font-size: map-get($subtitle-font-sizes, 3);
+  }
+  .subtitle4 {
+    font-size: map-get($subtitle-font-sizes, 4);
+  }
+}
+
+/********** Break Point **********/
+/**
+* Last Modified: 2023-08-16
+* Author: mwkang1 (mwkang1@smartscore.kr)
+* Description: Mobile Break point CSS
+*/
+$xs: 280px;
+$sm: 320px;
+$md: 720px;
+$lg: 1024px;
+$xl: 1400px;
+
+// important
+$imt: unquote("!important");
+
+// item length
+$itemLength: 1000;
+
+/********** color variable **********/
+
+// UI Color
+$color-f2f7ff: #f2f7ff !default;
+$color-e8f0ff: #e8f0ff !default;
+$color-bcd1f9: #bcd1f9 !default;
+$color-71a5ff: #71a5ff !default;
+$color-347eff: #347eff !default;
+$color-1e61d6: #1e61d6 !default;
+$color-0d48ad: #0d48ad !default;
+$color-023185: #023185 !default;
+$color-00225c: #00225c !default;
+$color-172030: #172030 !default;
+$color-4d5f7c: #4d5f7c !default;
+$color-8c9fc0: #8c9fc0 !default;
+$color-33425a: #33425a !default;
+$color-8e98a8: #8e98a8 !default;
+$color-f0f3f8: #f0f3f8 !default;
+$color-f6f6f6: #f6f6f6 !default;
+$color-e8e8e8: #e8e8e8 !default;
+$color-cccccc: #cccccc !default;
+$color-b0b0b0: #b0b0b0 !default;
+$color-767676: #767676 !default;
+$color-282828: #282828 !default;
+$color-ffffff: #ffffff !default;
+$color-767676: #767676 !default;
+$color-111111: #111111 !default;
+$color-bbbbbb: #bbbbbb !default;
+$color-f02c22: #f02c22 !default;
+$color-ff715b: #ff715b !default;
+$color-0496ff: #0496ff !default;
+$color-f5350b: #f5350b !default;
+$color-f77007: #f77007 !default;
+$color-f4bf31: #f4bf31 !default;
+$color-40b773: #40b773 !default;
+$color-5bba65: #5bba65 !default;
+$color-69bbb6: #69bbb6 !default;
+$color-7f6bb8: #7f6bb8 !default;
+$color-488d81: #488d81 !default;
+$color-c9ebb9: #c9ebb9 !default;
+$color-9ad7fa: #9ad7fa !default;
+$color-6d99e5: #6d99e5 !default;
+$color-4a67c2: #4a67c2 !default;
+$color-2e3d6d: #2e3d6d !default;
+$color-d46161: #d46161 !default;
+$color-f6c67c: #f6c67c !default;
+$color-fff1f1: #fff1f1 !default;
+$color-242424: #242424 !default;
+$color-0079ff: #0079ff !default;
+$color-7fbbff: #7fbbff !default;
+$color-e5f1ff: #e5f1ff !default;
+$color-484848: #484848 !default;
+$color-727272: #727272 !default;
+$color-f8f8f8: #f8f8f8 !default;
+$color-000000: #000000 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "f2f7ff": $color-f2f7ff,
+    "bcd1f9": $color-bcd1f9,
+    "71a5ff": $color-71a5ff,
+    "347eff": $color-347eff,
+    "1e61d6": $color-1e61d6,
+    "0d48ad": $color-0d48ad,
+    "023185": $color-023185,
+    "00225c": $color-00225c,
+    "172030": $color-172030,
+    "4d5f7c": $color-4d5f7c,
+    "8c9fc0": $color-8c9fc0,
+    "8e98a8": $color-8e98a8,
+    "f0f3f8": $color-f0f3f8,
+    "f6f6f6": $color-f6f6f6,
+    "e8e8e8": $color-e8e8e8,
+    "cccccc": $color-cccccc,
+    "767676": $color-767676,
+    "282828": $color-282828,
+    "ffffff": $color-ffffff,
+    "111111": $color-111111,
+    "bbbbbb": $color-bbbbbb,
+    "33425a": $color-33425a,
+    "e8f0ff": $color-e8f0ff,
+    "b0b0b0": $color-b0b0b0,
+    "f02c22": $color-f02c22,
+    "ff715b": $color-ff715b,
+    "0496ff": $color-0496ff,
+    "f5350b": $color-f5350b,
+    "f77007": $color-f77007,
+    "f4bf31": $color-f4bf31,
+    "40b773": $color-40b773,
+    "5bba65": $color-5bba65,
+    "69bbb6": $color-69bbb6,
+    "7f6bb8": $color-7f6bb8,
+    "488d81": $color-488d81,
+    "c9ebb9": $color-c9ebb9,
+    "9ad7fa": $color-9ad7fa,
+    "6d99e5": $color-6d99e5,
+    "4a67c2": $color-4a67c2,
+    "2e3d6d": $color-2e3d6d,
+    "d46161": $color-d46161,
+    "f6c67c": $color-f6c67c,
+    "fff1f1": $color-fff1f1,
+    "242424": $color-242424,
+    "0079ff": $color-0079ff,
+    "7fbbff": $color-7fbbff,
+    "e5f1ff": $color-e5f1ff,
+    "484848": $color-484848,
+    "727272": $color-727272,
+    "f8f8f8": $color-f8f8f8,
+    "000000": $color-000000,
+  ),
+  $colors
+);

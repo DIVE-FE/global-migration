@@ -1,0 +1,168 @@
+
+
+/* 공통 하단 배너
+*********************************************************************************************************************/
+.slide-content-foot-bn-wrap{
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  .slide-content-foot-box{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 160px;
+    .slide-content-foot-item{
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 160px;
+      align-items: center;
+      flex-grow: 1;
+      .bg-color-box{
+        flex: 1;
+        height: 100%;
+      }
+      > .slide-content{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        max-width: 1440px;
+        min-width: 1280px;
+        height: 160px;
+        padding: 0 8px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        > div{
+          display: flex;
+          flex: 1;
+          align-items: center;
+          height: 160px;
+          &:first-child{padding-right: 60px;}
+          &:last-child{padding-left: 60px;}
+        }
+      }
+    }
+    [class^="slide-content-foot-prev"], [class^="slide-content-foot-next"]{
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    .slide-content-foot-prev{left:0;}
+    .slide-content-foot-next{right:0;}
+  }
+  .slide-content-foot-pager{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    gap: 6px;
+    span{
+      display: inline-flex;
+      width: 40px;
+      height: 6px;
+      background: $color-e6e6ec;
+      &.active{background: $color-111111;}
+    }
+
+  }
+}
+
+
+[class^="slide-controller-prev"], [class^="slide-controller-next"]{
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.slide-controller-prev{left:0;}
+.slide-controller-next{right:0;}
+
+/* 브랜드 craft
+*********************************************************************************************************************/
+.craft-slide-pager{
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  bottom: 80px;
+  left: 50%;
+  font-size: 0;
+  margin-left: 37.5%;
+  @media screen and (min-width: 1424px) {margin-left: 475px;}
+}
+
+.craft-manship-pager{
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  left: 50%;
+  margin-left: -49%;
+  @media screen and (min-width: 1424px) {   margin-left: -710px;}
+  bottom: 80px;
+  span{
+    display: inline-flex;
+    width: 40px;
+    height: 6px;
+    background: $color-e6e6ec;
+    cursor: pointer;
+    &.active{background: $color-b5a371;}
+  }
+}
+
+
+/* 모바일 슬라이드 pagination-bullet : mwkang1 추가
+*********************************************************************************************************************/
+/* type : 1 */
+.m-slide-pagination-type1{
+  .slide-pagination-bullet{
+    flex:1;
+    width:80px;
+    height: 2px;
+    background: #767676;
+    &.slide-pagination-bullet-active{
+      background: #b5a371;
+    }
+  }
+}
+
+/* type : 2 */
+.m-slide-pagination-type2{
+  .slide-pagination-bullet{
+    flex:1;
+    width:80px;
+    height: 2px;
+    background: #e6e6ec;
+    &.slide-pagination-bullet-active{
+      background: #111111;
+    }
+  }
+}
+
+/* type : 2 */
+.m-slide-pagination-type3{
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  span{
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: $color-e6e6ec;
+    &.active{
+      background: $color-111111;
+    }
+  }
+
+}

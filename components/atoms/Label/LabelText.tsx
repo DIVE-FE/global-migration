@@ -1,14 +1,14 @@
 import React from 'react';
 
-interface LabelProps {
+interface LabelTextProps {
   htmlFor: string;
   text: string;
 }
 
-const Label = ({ htmlFor, text }: LabelProps) => (
+const LabelText = ({ htmlFor, text }: LabelTextProps) => (
   <label htmlFor={htmlFor}>
     {text}
   </label>
 );
 
-export default Label;
+export default LabelText;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface RequiredIndicatorProps {
+interface LabelRequiredProps {
   required: boolean;
 }
 
-const RequiredIndicator = ({ required }: RequiredIndicatorProps) => (
+const LabelRequired = ({ required }: LabelRequiredProps) => (
   <>{required && <span className="required">*</span>}</>
 );
 
-export default RequiredIndicator;
+export default LabelRequired;

@@ -5,12 +5,13 @@ interface NavItemProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  target?: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ href, children, className }) => {
+const NavItem: React.FC<NavItemProps> = ({ href, children, className, target }) => {
   return (
     <li className={className}>
-      <Link href={href}>{children}</Link>
+      <Link href={href} target={target}>{children}</Link>
     </li>
   );
 };

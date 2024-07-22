@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface LabelTextProps {
   htmlFor: string;
@@ -6,9 +6,7 @@ interface LabelTextProps {
 }
 
 const LabelText = ({ htmlFor, text }: LabelTextProps) => (
-  <label htmlFor={htmlFor}>
-    {text}
-  </label>
+  <label htmlFor={htmlFor}>{text}</label>
 );
 
 export default LabelText;

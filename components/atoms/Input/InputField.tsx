@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, KeyboardEvent } from 'react';
+import React, { ChangeEvent, FormEvent, KeyboardEvent } from "react";
 
 interface InputProps {
   type?: string;
@@ -13,7 +13,7 @@ interface InputProps {
 }
 
 const Input = ({
-  type = 'text',
+  type = "text",
   id,
   value,
   onChange,

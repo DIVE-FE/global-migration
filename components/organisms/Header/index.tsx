@@ -1,10 +1,10 @@
 import React from 'react';
 import Nav from '@/components/molecules/Nav';
 import Link from 'next/link';
-import Image from 'next/Image';
+import Image from 'next/image';
 
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <header className='header'>
       <div className='header-wrap'>

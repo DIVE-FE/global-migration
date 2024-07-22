@@ -5,7 +5,7 @@ interface NavProps {
   className?: string;
 }
 
-const Nav: React.FC<NavProps> = ({className}) => {
+const Nav = ({className} : NavProps) => {
   return (
     <nav>
       <ul className={className}>

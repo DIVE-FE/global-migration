@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 interface NavItemProps {
   href: string;
-  children: React.ReactNode;
   className?: string;
   target?: string;
+  children: React.ReactNode;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ href, children, className, target }) => {
+const NavItem = ({ href, children, className, target }: NavItemProps) => {
   return (
     <li className={className}>
       <Link href={href} target={target}>{children}</Link>

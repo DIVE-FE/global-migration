@@ -32,7 +32,7 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
         }
     }, [isFocus])
     return (
-        <button
+        <div
             className={className}
             style={style}
             onClick={focusChange}
@@ -43,7 +43,7 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
             <span>{countryCode}</span>
             <div className={"ml-10"} />
             <DirectionArrow className={"wh-18"} derection={arrowDirection} />
-        </button>
+        </div>
     )
 }
 

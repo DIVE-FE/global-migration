@@ -26,10 +26,8 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
     }
     useEffect(() => {
         if (isFocus) {
-            console.log("true")
             setArrowDirention(Direction.Up)
         } else {
-            console.log("false")
             setArrowDirention(Direction.Down)
         }
     }, [isFocus])
@@ -38,10 +36,7 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
             className={className}
             style={style}
             onClick={focusChange}
-            onBlur={() => {
-                console.log("onBlur")
-                setFocus(false)
-            }}
+            onBlur={() => { setFocus(false) }}
         >
             <CountryImageSlot className={"wh-18"} countryCode={countryCode} />
             <div className={"mr-10"} />

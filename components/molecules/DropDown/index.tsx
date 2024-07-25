@@ -1,17 +1,63 @@
 'use client';
 
-import CountryImageSlot from "@/components/atoms/Dropdown/countryImageSlot";
 import DirectionArrow, { Direction } from "@/components/atoms/Dropdown/directionArrow";
 import { useEffect, useState } from "react";
 
+const LANGUAGE = {
+    english:{
+        languageCode: "EN",
+        image:{
+            src:"https://image.smartscore.kr/smartscore_gloabl/icon/ic_en.png",
+            alt: "Flag of United State Of America",
+        }
+    },
+    vietnamese:{
+        languageCode: "VI",
+        image:{
+            src:"https://image.smartscore.kr/smartscore_gloabl/icon/ic_ti.png",
+            alt: "Flag of North Vietnam",
+        }
+    },
+    thai:{
+        languageCode: "TH",
+        image:{
+            src:"https://image.smartscore.kr/smartscore_gloabl/icon/ic_vn.png",
+            alt: "Flag of Thailand",
+        }
+    },
+    indonesian:{
+        languageCode: "ID",
+        image:{
+            src:"https://image.smartscore.kr/smartscore_gloabl/icon/ic_id.png",
+            alt: "Flag of Republic of Indonesia",
+        }
+    },
+    chinese:{
+        languageCode: "CN",
+        image:{
+            src:"https://image.smartscore.kr/smartscore_gloabl/icon/ic_cn.png",
+            alt: "Flag of China",
+        }
+    },
+    taiwanese:{
+        languageCode: "TW",
+        image:{
+            src:"https://image.smartscore.kr/smartscore_gloabl/icon/ic_tw.png",
+            alt: "Flag of Taiwan",
+        }
+    },
+} as const
+
+type LANGUAGE = typeof LANGUAGE[keyof typeof LANGUAGE];
+
 interface LanguageDropDownButtonProp {
-    countryCode: "EN" | "VN" | "TH" | "ID" | "CN" | "TW";
+    language: LANGUAGE;
     className?: string;
     style?: React.CSSProperties;
 }
 
 const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
-    countryCode = "EN",
+    language = LANGUAGE.english,
     className,
     style,
 }) => {
@@ -38,13 +84,13 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
             onClick={focusChange}
             onBlur={() => { setFocus(false) }}
         >
-            <CountryImageSlot className={"wh-18"} countryCode={countryCode} />
+            <img className={"wh-18"} src={language.image.src} alt={language.image.alt}/>
             <div className={"mr-10"} />
-            <span>{countryCode}</span>
+            <span>{language.languageCode}</span>
             <div className={"ml-10"} />
             <DirectionArrow className={"wh-18"} direction={arrowDirection} />
         </div>
     )
 }
 
-export { LanguageDropDownButton }
+export { LanguageDropDownButton, LANGUAGE }

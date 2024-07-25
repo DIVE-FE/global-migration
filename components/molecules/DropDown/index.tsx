@@ -1,6 +1,6 @@
 'use client';
 
-import CountryImageSlot from "@/components/atoms/Dropdown/coutryImageSlot";
+import CountryImageSlot from "@/components/atoms/Dropdown/countryImageSlot";
 import DirectionArrow, { Direction } from "@/components/atoms/Dropdown/directionArrow";
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,7 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
     style,
 }) => {
     const [isFocus, setFocus] = useState(false);
-    const [arrowDirection, setArrowDirention] = useState(Direction.Down)
+    const [arrowDirection, setArrowDirection] = useState(Direction.Down)
     const focusChange = () => {
         if (isFocus) {
             setFocus(false)
@@ -26,9 +26,9 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
     }
     useEffect(() => {
         if (isFocus) {
-            setArrowDirention(Direction.Up)
+            setArrowDirection(Direction.Up)
         } else {
-            setArrowDirention(Direction.Down)
+            setArrowDirection(Direction.Down)
         }
     }, [isFocus])
     return (
@@ -42,7 +42,7 @@ const LanguageDropDownButton: React.FC<LanguageDropDownButtonProp> = ({
             <div className={"mr-10"} />
             <span>{countryCode}</span>
             <div className={"ml-10"} />
-            <DirectionArrow className={"wh-18"} derection={arrowDirection} />
+            <DirectionArrow className={"wh-18"} direction={arrowDirection} />
         </div>
     )
 }

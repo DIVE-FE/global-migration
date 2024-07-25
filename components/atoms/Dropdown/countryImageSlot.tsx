@@ -16,7 +16,7 @@ const CountryImageSlot: React.FC<CountryImageSlotProps> = ({
   );
 };
 
-function getImageUrl(countryCode: string) {
+const getImageUrl = (countryCode: string) => {
   switch (countryCode) {
     case "EN":
       return "https://image.smartscore.kr/smartscore_gloabl/icon/ic_en.png";
@@ -35,7 +35,7 @@ function getImageUrl(countryCode: string) {
   }
 }
 
-function getAlt(countryCode: string) {
+const getAlt = (countryCode: string) => {
   switch (countryCode) {
     case "EN":
       return "Flag of United State Of America";

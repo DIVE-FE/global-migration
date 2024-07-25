@@ -28,7 +28,7 @@ const DirectionArrow: React.FC<DirectionProp> = ({
     )
 }
 
-function getArrowImageUrl(direction: Direction) {
+const getArrowImageUrl = (direction: Direction) => {
     switch (direction) {
         case Direction.Up: return "https://image.smartscore.kr/club/icn/ic_arrow_line_up.svg"
         case Direction.Down: return "https://image.smartscore.kr/club/icn/ic_arrow_line_down.svg"

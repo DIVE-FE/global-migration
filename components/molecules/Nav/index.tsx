@@ -1,5 +1,5 @@
-import React from 'react';
-import NavItem from '@/components/atoms/NavItem';
+import React from "react";
+import NavItem from "@/components/atoms/NavItem";
 import { LanguageDropDownButton } from "@/components/molecules/DropDown";
 
 interface NavProps {
@@ -14,8 +14,11 @@ const Nav = ({ className }: NavProps) => {
         <NavItem href="/digitalization">DIGITALIZATION</NavItem>
         <NavItem href="/company">COMPANY</NavItem>
         <NavItem href="/mobile-app">MOBILE APP</NavItem>
-        <NavItem href="/mobile-app">MOBILE APP</NavItem>
-        <LanguageDropDownButton className={"change-lang-box select-lang"} countryCode={"EN"} />
+        <NavItem href="/contact-us">CONTACT US</NavItem>
+        <LanguageDropDownButton
+          className={"change-lang-box select-lang"}
+          countryCode={"EN"}
+        />
       </ul>
     </nav>
   );

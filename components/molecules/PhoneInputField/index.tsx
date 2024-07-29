@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import InputForm from "@/components/atoms/InputForm";
 import Label from "@/components/molecules/Input/Label";
 import Input from "@/components/atoms/Input/InputField";

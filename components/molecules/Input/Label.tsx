@@ -1,5 +1,3 @@
-import React from "react";
-
 import LabelRequired from "@/components/atoms/Label/LabelRequired";
 
 interface LabelProps {
@@ -8,7 +6,7 @@ interface LabelProps {
   required?: boolean;
 }
 
-const Label: React.FC<LabelProps> = ({ htmlFor, text, required = false }) => (
+const Label = ({ htmlFor, text, required = false } : LabelProps) => (
   <label htmlFor={htmlFor}>
     {text}
     <LabelRequired required={required} />

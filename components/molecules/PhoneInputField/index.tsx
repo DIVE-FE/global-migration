@@ -1,14 +1,17 @@
+"use client"
+
 import { useState } from "react";
 import InputForm from "@/components/atoms/InputForm";
 import Label from "@/components/molecules/Input/Label";
 import Input from "@/components/atoms/Input/InputField";
+import DeleteIcon from "@/components/atoms/icons/DeleteIcon";
 
 interface PhoneInputFieldProps {
   label: string;
   required?: boolean;
   disabled?: boolean;
   error?: boolean;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }
 
 const PhoneInputField = ({
@@ -19,6 +22,8 @@ const PhoneInputField = ({
   onChange,
 }: PhoneInputFieldProps) => {
   const [phone, setPhone] = useState("");
+
+  const handleClickDeleteIcon = () => {};
 
   return (
     <InputForm className="input-type-number" error={error}>
@@ -31,6 +36,7 @@ const PhoneInputField = ({
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+        {phone && <DeleteIcon className="input-group__append" onClick={handleClickDeleteIcon} />}
       </div>
     </InputForm>
   );

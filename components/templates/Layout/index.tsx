@@ -1,18 +1,18 @@
 // components/templates/Layout.tsx
 import React from "react";
 import Header from "@/components/organisms/Header";
-import styles from "@/app/page.module.css";
+import Footer from "@/components/organisms/Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <main className={styles.main}>{children}</main>
-      {/* Footer 영역 */}
+      <main>{children}</main>
+      <Footer />
     </>
   );
 };

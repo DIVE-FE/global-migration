@@ -6,40 +6,41 @@ import Label from "@/components/molecules/InputField/Label";
 import Input from "@/components/atoms/Input";
 import DeleteIcon from "@/components/atoms/icons/DeleteIcon";
 
-interface PhoneInputFieldProps {
+interface InputFieldProps {
   label: string;
+  id: string;
   required?: boolean;
   disabled?: boolean;
   error?: boolean;
   onChange?: (value: string) => void;
 }
 
-const PhoneInputField = ({
+const InputField = ({
   label,
+  id,
   required = false,
   error = false,
   disabled = false,
   onChange,
-}: PhoneInputFieldProps) => {
-  const [phone, setPhone] = useState("");
+}: InputFieldProps) => {
+  const [value, setValue] = useState("");
 
   const handleClickDeleteIcon = () => {};
 
   return (
-    <InputForm className="input-type-number" error={error}>
-      <Label htmlFor="phone" text={label} required={required} />
+    <InputForm className="input-type-text" error={error}>
+      <Label htmlFor={id} text={label} required={required} />
       <div className="input-group">
-        <div className="input-group__add"></div>
         <Input
-          id="phone"
+          id={id}
           disabled={disabled}
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
         />
-        {phone && <DeleteIcon className="input-group__append" onClick={handleClickDeleteIcon} />}
+        {value && <DeleteIcon className="input-group__append" onClick={handleClickDeleteIcon} />}
       </div>
     </InputForm>
   );
 };
 
-export default PhoneInputField;
+export default InputField;

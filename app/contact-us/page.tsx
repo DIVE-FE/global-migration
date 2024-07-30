@@ -1,9 +1,13 @@
+"use client"
+
+import AppInquiryForm from "@/components/templates/AppInquiryForm";
+
 type Props = {};
 
 const ContactUs = (props: Props) => {
   return (
     <div className="contents">
-      <div>ContactUs Page</div>
+      <AppInquiryForm  />
       {/* <div className="common-page-visual-area contactus">
       <div className="txt-box">
         <span className="text-uppercase">{{ $t("common.contact-us") }}</span>

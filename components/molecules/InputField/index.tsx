@@ -12,6 +12,7 @@ interface InputFieldProps {
   required?: boolean;
   disabled?: boolean;
   error?: boolean;
+  limit?: number;
   onChange?: (value: string) => void;
 }
 
@@ -21,6 +22,7 @@ const InputField = ({
   required = false,
   error = false,
   disabled = false,
+  limit = 20,
   onChange,
 }: InputFieldProps) => {
   const [value, setValue] = useState("");
@@ -36,6 +38,7 @@ const InputField = ({
           disabled={disabled}
           value={value}
           onChange={(e) => setValue(e.target.value)}
+          maxLength={limit}
         />
         {value && <DeleteIcon className="input-group__append" onClick={handleClickDeleteIcon} />}
       </div>

@@ -464,16 +464,36 @@ input::-webkit-inner-spin-button {
   }
   &.row {
     display: flex;
-    align-items: center;
     .title {
       margin-bottom: 0;
-      color: $color-767676;
       margin-right: 8px;
     }
-    & + .form-group {
-      margin-top: 0;
+
+    &.title-left  {
+      flex-direction: row;
+      align-items: center;
     }
-    .contactus-box {
+
+    &.title-right {
+      flex-direction: row-reverse;
+      align-items: center;
+
+    }
+
+    &.title-top {
+      flex-direction: column;
+      .title {
+        margin-bottom: 10px;
+      }
+    }
+
+    &.title-bottom {
+      flex-direction: column-reverse;
+    }
+
+    & + .form-group{
+      margin-top:0;
+      margin-left: 16px;
     }
   }
   &.row-input-select {
@@ -496,7 +516,6 @@ input::-webkit-inner-spin-button {
     font-size: 1.4rem;
     font-weight: 500;
     color: $color-282828;
-    margin-bottom: 12px;
     .etc-p {
     }
     & + .radio-group {

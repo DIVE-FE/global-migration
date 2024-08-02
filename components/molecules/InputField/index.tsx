@@ -6,6 +6,7 @@ import InputForm from '@/components/atoms/InputForm';
 import Label from '@/components/molecules/InputField/Label';
 import Input from '@/components/atoms/Input';
 import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
+import InputMessage from '@/components/atoms/InputMessage';
 
 interface InputFieldProps {
   label: string;
@@ -17,7 +18,9 @@ interface InputFieldProps {
   row?: boolean;
   labelPosition?: 'left' | 'right' | 'top' | 'bottom';
   onChange?: (value: string) => void;
+  value?: string;
   className?: string;
+  message?: string;
 }
 
 const InputField = ({
@@ -27,14 +30,24 @@ const InputField = ({
   error = false,
   disabled = false,
   limit = 20,
+  onChange,
+  value = '',
+  message,
+  className,
   row = false,
   labelPosition = 'top',
-  className,
-  onChange,
 }: InputFieldProps) => {
-  const [value, setValue] = useState('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
 
-  const handleClickDeleteIcon = () => setValue('');
+  const handleClickDeleteIcon = () => {
+    if (onChange) {
+      onChange('');
+    }
+  };
 
   return (
     <InputForm
@@ -49,7 +62,7 @@ const InputField = ({
           id={id}
           disabled={disabled}
           value={value}
-          onChange={e => setValue(e.target.value)}
+          onChange={handleChange}
           maxLength={limit}
         />
         {value && (
@@ -59,6 +72,7 @@ const InputField = ({
           />
         )}
       </div>
+      {message && <InputMessage message={message} />}
     </InputForm>
   );
 };

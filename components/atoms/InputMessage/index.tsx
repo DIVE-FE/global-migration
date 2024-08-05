@@ -1,10 +1,8 @@
-import React from 'react';
-
 interface InputMessageProps {
   message: string;
 }
 
-const InputMessage: React.FC<InputMessageProps> = ({ message }) => {
+const InputMessage = ({ message }: InputMessageProps) => {
   return <p className='message'>{message}</p>;
 };
 

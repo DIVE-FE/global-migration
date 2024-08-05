@@ -1,40 +1,35 @@
-'use client';
-
+import { useState } from 'react';
 import classNames from 'classnames';
-import InputForm from '@/components/atoms/InputForm';
-import Label from '@/components/molecules/InputField/Label';
-import Input from '@/components/atoms/Input';
-import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
-import InputMessage from '@/components/atoms/InputMessage';
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+import Input from '@/components/atoms/Input';
+import InputForm from '@/components/atoms/InputForm';
+import InputMessage from '@/components/atoms/InputMessage';
+import Label from '@/components/molecules/InputField/Label';
+import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
+
+interface PhoneInputFieldProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  error?: boolean;
-  limit?: number;
-  row?: boolean;
-  labelPosition?: 'left' | 'right' | 'top' | 'bottom';
   className?: string;
-  message?: string;
+  error?: boolean;
   required?: boolean;
-  id: string;
-  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  countryNumber?: string | Number;
+  message?: string;
 }
 
-const InputField = ({
+const PhoneInputField = ({
+  className,
   label,
-  id,
   required = false,
   error = false,
-  limit = 20,
+  countryNumber = '',
+  message,
   onChange,
   value = '',
-  message,
-  className,
-  row = false,
-  labelPosition = 'top',
   ...rest
-}: InputFieldProps) => {
+}: PhoneInputFieldProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(e);
@@ -51,20 +46,15 @@ const InputField = ({
 
   return (
     <InputForm
-      className={classNames('input-type-text', className)}
+      className={classNames('input-type-phone', className)}
       error={error}
-      labelPosition={labelPosition}
-      row={row}
     >
-      <Label htmlFor={id} text={label} required={required} />
+      <Label htmlFor='phone' text={label} required={required} />
       <div className='input-group'>
-        <Input
-          id={id}
-          value={value}
-          onChange={handleChange}
-          maxLength={limit}
-          {...rest}
-        />
+        <div className='input-group__add'>
+          {countryNumber && `${countryNumber} |`}
+        </div>
+        <Input id='phone' value={value} onChange={handleChange} {...rest} />
         {value && (
           <DeleteIcon
             className='input-group__append'
@@ -77,4 +67,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default PhoneInputField;

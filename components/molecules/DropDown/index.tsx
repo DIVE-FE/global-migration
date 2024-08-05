@@ -1,5 +1,4 @@
 import LANGUAGE from "@/type/language";
-import { count } from "console";
 
 export interface DropDownHolderProps<T> {
     items: T[];
@@ -54,9 +53,8 @@ const PlainDropDownItem = ({
     text,
 }: PlainDropDownProps) => {
     return (<>
-        <li className="data-v-45ca3290">{text}</li>
+        <li >{text}</li>
     </>)
 }
-
 
 export { DropDownHolder, CountryDropDownItem, PlainDropDownItem }

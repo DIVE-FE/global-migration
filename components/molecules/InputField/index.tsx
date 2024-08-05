@@ -1,23 +1,24 @@
 'use client';
 
-import { useState } from 'react';
 import classNames from 'classnames';
 import InputForm from '@/components/atoms/InputForm';
 import Label from '@/components/molecules/InputField/Label';
 import Input from '@/components/atoms/Input';
 import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
+import InputMessage from '@/components/atoms/InputMessage';
 
-interface InputFieldProps {
+interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  id: string;
-  required?: boolean;
-  disabled?: boolean;
   error?: boolean;
   limit?: number;
   row?: boolean;
   labelPosition?: 'left' | 'right' | 'top' | 'bottom';
-  onChange?: (value: string) => void;
   className?: string;
+  message?: string;
+  required?: boolean;
+  id: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputField = ({
@@ -25,16 +26,28 @@ const InputField = ({
   id,
   required = false,
   error = false,
-  disabled = false,
   limit = 20,
+  onChange,
+  value = '',
+  message,
+  className,
   row = false,
   labelPosition = 'top',
-  className,
-  onChange,
+  ...rest
 }: InputFieldProps) => {
-  const [value, setValue] = useState('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(e);
+    }
+  };
 
-  const handleClickDeleteIcon = () => setValue('');
+  const handleClickDeleteIcon = () => {
+    if (onChange) {
+      onChange({
+        target: { value: '' },
+      } as React.ChangeEvent<HTMLInputElement>);
+    }
+  };
 
   return (
     <InputForm
@@ -47,10 +60,10 @@ const InputField = ({
       <div className='input-group'>
         <Input
           id={id}
-          disabled={disabled}
           value={value}
-          onChange={e => setValue(e.target.value)}
+          onChange={handleChange}
           maxLength={limit}
+          {...rest}
         />
         {value && (
           <DeleteIcon
@@ -59,6 +72,7 @@ const InputField = ({
           />
         )}
       </div>
+      {message && <InputMessage message={message} />}
     </InputForm>
   );
 };

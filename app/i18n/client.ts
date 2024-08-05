@@ -26,7 +26,7 @@ i18next
   )
   .init({
     ...getOptions(),
-    lng: 'ko',
+    lng: 'en',
     detection: {
       order: ['path', 'htmlTag', 'cookie', 'navigator'],
     },

@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import classNames from 'classnames';
 import InputForm from '@/components/atoms/InputForm';
 import Label from '@/components/molecules/InputField/Label';
@@ -8,19 +7,18 @@ import Input from '@/components/atoms/Input';
 import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
 import InputMessage from '@/components/atoms/InputMessage';
 
-interface InputFieldProps {
+interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  id: string;
-  required?: boolean;
-  disabled?: boolean;
   error?: boolean;
   limit?: number;
   row?: boolean;
   labelPosition?: 'left' | 'right' | 'top' | 'bottom';
-  onChange?: (value: string) => void;
-  value?: string;
   className?: string;
   message?: string;
+  required?: boolean;
+  id: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputField = ({
@@ -28,7 +26,6 @@ const InputField = ({
   id,
   required = false,
   error = false,
-  disabled = false,
   limit = 20,
   onChange,
   value = '',
@@ -36,16 +33,19 @@ const InputField = ({
   className,
   row = false,
   labelPosition = 'top',
+  ...rest
 }: InputFieldProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
-      onChange(e.target.value);
+      onChange(e);
     }
   };
 
   const handleClickDeleteIcon = () => {
     if (onChange) {
-      onChange('');
+      onChange({
+        target: { value: '' },
+      } as React.ChangeEvent<HTMLInputElement>);
     }
   };
 
@@ -60,10 +60,10 @@ const InputField = ({
       <div className='input-group'>
         <Input
           id={id}
-          disabled={disabled}
           value={value}
           onChange={handleChange}
           maxLength={limit}
+          {...rest}
         />
         {value && (
           <DeleteIcon

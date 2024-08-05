@@ -1,20 +1,22 @@
-'use client';
-
 import { useState } from 'react';
-import InputForm from '@/components/atoms/InputForm';
-import Label from '@/components/molecules/InputField/Label';
-import Input from '@/components/atoms/Input';
-import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
 import classNames from 'classnames';
 
-interface PhoneInputFieldProps {
-  className?: string;
+import Input from '@/components/atoms/Input';
+import InputForm from '@/components/atoms/InputForm';
+import InputMessage from '@/components/atoms/InputMessage';
+import Label from '@/components/molecules/InputField/Label';
+import DeleteIcon from '@/components/atoms/icons/DeleteIcon';
+
+interface PhoneInputFieldProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  required?: boolean;
-  disabled?: boolean;
+  className?: string;
   error?: boolean;
-  onChange?: (value: string) => void;
+  required?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
   countryNumber?: string | Number;
+  message?: string;
 }
 
 const PhoneInputField = ({
@@ -22,12 +24,25 @@ const PhoneInputField = ({
   label,
   required = false,
   error = false,
-  disabled = false,
   countryNumber = '',
+  message,
   onChange,
+  value = '',
+  ...rest
 }: PhoneInputFieldProps) => {
-  const [phone, setPhone] = useState('');
-  const handleClickDeleteIcon = () => setPhone('');
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(e);
+    }
+  };
+
+  const handleClickDeleteIcon = () => {
+    if (onChange) {
+      onChange({
+        target: { value: '' },
+      } as React.ChangeEvent<HTMLInputElement>);
+    }
+  };
 
   return (
     <InputForm
@@ -39,19 +54,15 @@ const PhoneInputField = ({
         <div className='input-group__add'>
           {countryNumber && `${countryNumber} |`}
         </div>
-        <Input
-          id='phone'
-          disabled={disabled}
-          value={phone}
-          onChange={e => setPhone(e.target.value)}
-        />
-        {phone && (
+        <Input id='phone' value={value} onChange={handleChange} {...rest} />
+        {value && (
           <DeleteIcon
             className='input-group__append'
             onClick={handleClickDeleteIcon}
           />
         )}
       </div>
+      {message && <InputMessage message={message} />}
     </InputForm>
   );
 };
